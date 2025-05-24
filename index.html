@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site da Fernanda - portfólio, informações e contato.">
+  <meta name="keywords" content="Fernanda, portfólio, site pessoal, contato, redes, tecnologia">
+  <meta name="author" content="Fernanda">
   <title>Fernanda Redes & Tecnologia</title>
   <style>
     * {
@@ -56,6 +59,10 @@
       display: flex;
       flex-direction: column;
     }
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
     input, textarea {
       margin-bottom: 10px;
       padding: 12px;
@@ -71,6 +78,10 @@
       border-radius: 5px;
       font-weight: bold;
       font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0077b3;
     }
     @media (max-width: 600px) {
       header img {
@@ -88,7 +99,7 @@
 </head>
 <body>
   <header>
-    <img src="logo.jpg" alt="Logo Fernanda Redes">
+    <img src="logo.jpg" alt="Logotipo da Fernanda Redes e Tecnologia">
     <h1>Fernanda Redes & Tecnologia</h1>
     <p>Soluções em rede com o cuidado Fernanda</p>
   </header>
@@ -103,81 +114,46 @@
 
   <section>
     <h2>Contato</h2>
-    <meta name="description" content="Site da Fernanda - portfólio, informações e contato.">
-<meta name="keywords" content="Fernanda, portfólio, site pessoal, contato">
-<meta name="author" content="Fernanda">
     <p>WhatsApp: +258 862349997</p>
-    <p>Email: agnevieira3@gmail.com</p>
-    <p>Facebook: <a href="#">facebook.com/fernandaredes</a></p>
+    <p>Email: <a href="mailto:agnevieira3@gmail.com">agnevieira3@gmail.com</a></p>
+    <p>Facebook: <a href="https://facebook.com/fernandaredes" target="_blank">facebook.com/fernandaredes</a></p>
     <a class="whatsapp-button" href="https://wa.me/258862349997" target="_blank">Fale conosco no WhatsApp</a>
   </section>
-<section>
-  <h2>Formulário de Contato</h2>
-  <form action="agnevieira3@gmail.com" method="post">
-    <input type="text" name="nome" placeholder="Seu nome" required>
-    <input type="email" name="email" placeholder="Seu email" required>
-    <textarea name="mensagem" placeholder="Sua mensagem" rows="5" required></textarea>
-    <button type="submit">Enviar</button>
-  </form>
-</section>
-  <meta name="description" content="Site da Fernanda - portfólio, informações e contato.">
-<meta name="keywords" content="Fernanda, portfólio, site pessoal, contato">
-<meta name="author" content="Fernanda">
+
+  <section>
+    <h2>Formulário de Contato</h2>
+    <form id="contact-form">
+      <label for="from_name">Nome:</label>
+      <input type="text" id="from_name" name="from_name" placeholder="Seu nome" required>
+      <label for="from_email">Email:</label>
+      <input type="email" id="from_email" name="from_email" placeholder="Seu email" required>
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Fernanda Redes & Tecnologia</p>
+    <p>&copy; <script>document.write(new Date().getFullYear());</script> Fernanda Redes & Tecnologia</p>
   </footer>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("KMSCUFRIEIUSKXYYFVUQW6IYKARGQZYNPM4CUS2EMEPXKMZGIQCTQ6DCPESTO6AZ");
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      emailjs.sendForm("service_swyqbhf", "412Gmail_API", this)
+        .then(function() {
+          alert("Mensagem enviada com sucesso!");
+          document.getElementById("contact-form").reset();
+        }, function(error) {
+          alert("Erro ao enviar: " + JSON.stringify(error));
+        });
+    });
+  </script>
 </body>
 </html>
-<title>Fernanda - Site Oficial</title>
-<head>
-  ...
-  <meta name="description" content="Site da Fernanda - portfólio, informações e contato.">
-  <meta name="keywords" content="Fernanda, portfólio, site pessoal, contato">
-  <meta name="author" content="Fernanda">
-<title>Fernanda - Site Oficial</title>
-<p>Facebook: <a href="https://facebook.com/fernandaredes" target="_blank">facebook.com/fernandaredes</a></p>
-<img src="logo.jpg" alt="Logotipo da Fernanda Redes e Tecnologia">
-<input type="hidden" name="_captcha" value="false">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fernanda Redes & Tecnologia</title>
-  <meta name="description" content="Site da Fernanda - portfólio, informações e contato.">
-  <meta name="keywords" content="Fernanda, portfólio, site pessoal, contato">
-  <meta name="author" content="Fernanda">
-  <style>
-    /* seu CSS continua igual */
-  </style>
-</head>
-<!-- Carrega a biblioteca do EmailJS -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("KMSCUFRIEIUSKXYYFVUQW6IYKARGQZYNPM4CUS2EMEPXKMZGIQCTQ6DCPESTO6AZ");
-  })();
-</script>
-
-<!-- Formulário de contacto -->
-<form id="contact-form">
-  <input type="text" name="from_name" placeholder="Seu nome" required>
-  <input type="email" name="from_email" placeholder="Seu e-mail" required>
-  <textarea name="message" placeholder="Sua mensagem" required></textarea>
-  <button type="submit">Enviar</button>
-</form>
-
-<!-- Script de envio -->
-<script>
-  document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    emailjs.sendForm("service_swyqbhf", "412Gmail_API", this)
-      .then(function() {
-        alert("Mensagem enviada com sucesso!");
-      }, function(error) {
-        alert("Erro ao enviar: " + JSON.stringify(error));
-      });
-  });
-</script>
-
-

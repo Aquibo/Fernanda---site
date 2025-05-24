@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fernanda Redes & Tecnologia</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('background.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-shadow: 1px 1px 2px black;
+    }
+    header {
+      background-color: rgba(0, 85, 128, 0.85);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      height: 60px;
+      max-width: 100%;
+    }
+    section {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+    .service { margin-bottom: 10px; }
+    .whatsapp-button {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-top: 10px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea {
+      margin-bottom: 10px;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    button {
+      padding: 12px;
+      background-color: #005580;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1em;
+    }
+    @media (max-width: 600px) {
+      header img {
+        height: 40px;
+      }
+      section {
+        padding: 15px;
+        margin: 5px;
+      }
+      input, textarea, button {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo Fernanda Redes">
+    <h1>Fernanda Redes & Tecnologia</h1>
+    <p>Soluções em rede com o cuidado Fernanda</p>
+  </header>
+
+  <section>
+    <h2>Serviços</h2>
+    <div class="service"><strong>Doméstico:</strong> Instalação de Wi-Fi, cabeamento, repetidores</div>
+    <div class="service"><strong>Empresarial:</strong> Redes grandes, servidores, VLANs</div>
+    <div class="service"><strong>Suporte Técnico:</strong> Diagnóstico, manutenção, otimização</div>
+    <div class="service"><strong>Planos Mensais:</strong> Suporte contínuo para empresas</div>
+  </section>
+
+  <section>
+    <h2>Contato</h2>
+    <p>WhatsApp: +258 XXXXXXXX</p>
+    <p>Email: contato@fernandaredes.co.mz</p>
+    <p>Facebook: <a href="#">facebook.com/fernandaredes</a></p>
+    <a class="whatsapp-button" href="https://wa.me/258XXXXXXXX" target="_blank">Fale conosco no WhatsApp</a>
+  </section>
+
+  <section>
+    <h2>Formulário de Contato</h2>
+    <form action="#" method="post">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu email" required>
+      <textarea name="mensagem" placeholder="Sua mensagem" rows="5" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Fernanda Redes & Tecnologia</p>
+  </footer>
+</body>
+</html>

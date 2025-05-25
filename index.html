@@ -2,203 +2,88 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Site da Fernanda - portfólio, informações e contato." />
-  <meta name="keywords" content="Fernanda, portfólio, site pessoal, contato, redes, tecnologia" />
-  <meta name="author" content="Fernanda" />
-  <title>Fernanda Redes & Tecnologia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato - Fernanda</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-image: url('background.jpg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      text-shadow: 1px 1px 2px black;
-    }
-    header {
-      background-color: rgba(0, 85, 128, 0.85);
-      color: white;
+      background-color: #f2f2f2;
       padding: 20px;
-      text-align: center;
-    }
-    header img {
-      height: 60px;
-      max-width: 100%;
-    }
-    section {
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      margin: 10px;
-      border-radius: 10px;
-    }
-    footer {
-      background-color: rgba(255, 255, 255, 0.2);
-      padding: 10px;
-      text-align: center;
-      color: white;
-    }
-    .service {
-      margin-bottom: 10px;
-    }
-    .whatsapp-button {
-      display: inline-block;
-      background-color: #25D366;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1em;
-      margin-top: 10px;
     }
     form {
-      display: flex;
-      flex-direction: column;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    label {
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-    input,
-    textarea {
-      margin-bottom: 10px;
+    input, textarea, button {
+      width: 100%;
       padding: 12px;
-      border: none;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
       border-radius: 5px;
-      font-size: 1em;
+      font-size: 16px;
     }
     button {
-      padding: 12px;
       background-color: #005580;
       color: white;
       border: none;
-      border-radius: 5px;
-      font-weight: bold;
-      font-size: 1em;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
     button:hover {
       background-color: #0077b3;
     }
-    @media (max-width: 600px) {
-      header img {
-        height: 40px;
-      }
-      section {
-        padding: 15px;
-        margin: 5px;
-      }
-      input,
-      textarea,
-      button {
-        font-size: 1em;
-      }
+    #form-status {
+      font-weight: bold;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.jpg" alt="Logotipo da Fernanda Redes e Tecnologia" />
-    <h1>Fernanda Redes & Tecnologia</h1>
-    <p>Soluções em rede com o cuidado Fernanda</p>
-  </header>
 
-  <section>
-    <h2>Serviços</h2>
-    <div class="service"><strong>Doméstico:</strong> Instalação de Wi-Fi, cabeamento, repetidores</div>
-    <div class="service"><strong>Empresarial:</strong> Redes grandes, servidores, VLANs</div>
-    <div class="service"><strong>Suporte Técnico:</strong> Diagnóstico, manutenção, otimização</div>
-    <div class="service"><strong>Planos Mensais:</strong> Suporte contínuo para empresas</div>
-  </section>
+  <h2 style="text-align: center;">Formulário de Contato</h2>
 
-  <section>
-    <h2>Contato</h2>
-    <p>WhatsApp: +258 862349997</p>
-    <p>Email: <a href="mailto:uaheraajv02@gmail.com">uaheraajv023@gmail.com</a></p>
-    <p>Facebook: <a href="https://facebook.com/fernandaredes" target="_blank" rel="noopener noreferrer">facebook.com/fernandaredes</a></p>
-    <a
-      class="whatsapp-button"
-      href="https://wa.me/258862349997"
-      target="_blank"
-      rel="noopener noreferrer"
-      >Fale conosco no WhatsApp</a
-    >
-  </section>
+  <form id="contact-form">
+    <label for="from_name">Nome:</label>
+    <input type="text" id="from_name" name="from_name" required>
 
-  <section>
-    <h2>Formulário de Contato</h2>
-    <form id="contact-form">
-      <label for="from_name">Nome:</label>
-      <input
-        type="text"
-        id="from_name"
-        name="from_name"
-        placeholder="Seu nome"
-        required
-      />
-      <label for="from_email">Email:</label>
-      <input
-        type="email"
-        id="from_email"
-        name="from_email"
-        placeholder="Seu email"
-        required
-      />
-      <label for="message">Mensagem:</label>
-      <textarea
-        id="message"
-        name="message"
-        placeholder="Sua mensagem"
-        rows="5"
-        required
-      ></textarea>
-      <button type="submit">Enviar</button>
-      <p id="form-status" style="margin-top: 10px; font-weight: bold;"></p>
-    </form>
-  </section>
+    <label for="from_email">Email:</label>
+    <input type="email" id="from_email" name="from_email" required>
 
-  <footer>
-    <p>&copy; <script>document.write(new Date().getFullYear());</script> Fernanda Redes & Tecnologia</p>
-  </footer>
+    <label for="message">Mensagem:</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit">Enviar</button>
+    <p id="form-status"></p>
+  </form>
 
   <!-- EmailJS SDK -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    (function () {
-      emailjs.init("gaE4R7tlAanQitSmG"); // substitua pela sua chave pública EmailJS
+    (function() {
+      emailjs.init("gaE4R7tIAanQitSmG"); // Sua chave pública
     })();
 
-    document
-      .getElementById("contact-form")
-      .addEventListener("submit", function (e) {
-        e.preventDefault();
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const status = document.getElementById("form-status");
+      status.style.color = "#000";
+      status.textContent = "Enviando...";
 
-        const status = document.getElementById("form-status");
-        status.style.color = "white";
-        status.textContent = "Enviando...";
-
-        emailjs
-          .sendForm("service_swyqbhf", "412Gmail_API", this)
-          .then(
-            function () {
-              status.style.color = "#00ff99";
-              status.textContent = "Mensagem enviada com sucesso!";
-              document.getElementById("contact-form").reset();
-            },
-            function (error) {
-              status.style.color = "#ff5050";
-              status.textContent = "Erro ao enviar. Tente novamente.";
-              console.error("Erro:", error);
-            }
-          );
-      });
+      emailjs.sendForm("service_bqldy22", "412Gmail_API", this)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          status.style.color = "green";
+          status.textContent = "Mensagem enviada com sucesso!";
+          document.getElementById("contact-form").reset();
+        }, function(error) {
+          console.error('FAILED...', error);
+          status.style.color = "red";
+          status.textContent = "Erro ao enviar. Verifique o console.";
+        });
+    });
   </script>
 </body>
 </html>

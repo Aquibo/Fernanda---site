@@ -7,160 +7,73 @@
   <meta name="keywords" content="Fernanda, portfólio, site pessoal, contato, redes, tecnologia" />
   <meta name="author" content="Fernanda" />
   <title>Fernanda Redes & Tecnologia</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-image: url('background.jpg');
-      background-size: cover;
-      background-position: center;
+      background: #00334d;
       color: white;
-      text-shadow: 1px 1px 2px black;
     }
-    header {
-      background-color: rgba(0, 85, 128, 0.85);
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header img {
-      height: 60px;
-      max-width: 100%;
-    }
-    section {
-      background-color: rgba(0, 0, 0, 0.6);
+    header, section, footer {
       padding: 20px;
       margin: 10px;
+      background: rgba(0, 0, 0, 0.5);
       border-radius: 10px;
     }
-    footer {
-      background-color: rgba(255, 255, 255, 0.2);
+    input, textarea {
+      width: 100%;
       padding: 10px;
-      text-align: center;
-      color: white;
-    }
-    .service {
-      margin-bottom: 10px;
-    }
-    .whatsapp-button {
-      display: inline-block;
-      background-color: #25D366;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1em;
-      margin-top: 10px;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-    }
-    label {
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-    input,
-    textarea {
-      margin-bottom: 10px;
-      padding: 12px;
+      margin: 5px 0 15px;
       border: none;
       border-radius: 5px;
-      font-size: 1em;
     }
     button {
-      padding: 12px;
-      background-color: #005580;
+      padding: 10px 20px;
+      background: #006699;
       color: white;
       border: none;
       border-radius: 5px;
-      font-weight: bold;
-      font-size: 1em;
       cursor: pointer;
-      transition: background-color 0.3s ease;
     }
-    button:hover {
-      background-color: #0077b3;
-    }
-    @media (max-width: 600px) {
-      header img {
-        height: 40px;
-      }
-      section {
-        padding: 15px;
-        margin: 5px;
-      }
-      input,
-      textarea,
-      button {
-        font-size: 1em;
-      }
+    .g-recaptcha {
+      margin-bottom: 15px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.jpg" alt="Logotipo da Fernanda Redes e Tecnologia" />
     <h1>Fernanda Redes & Tecnologia</h1>
     <p>Soluções em rede com o cuidado Fernanda</p>
   </header>
 
   <section>
     <h2>Serviços</h2>
-    <div class="service"><strong>Doméstico:</strong> Instalação de Wi-Fi, cabeamento, repetidores</div>
-    <div class="service"><strong>Empresarial:</strong> Redes grandes, servidores, VLANs</div>
-    <div class="service"><strong>Suporte Técnico:</strong> Diagnóstico, manutenção, otimização</div>
-    <div class="service"><strong>Planos Mensais:</strong> Suporte contínuo para empresas</div>
-  </section>
-
-  <section>
-    <h2>Contato</h2>
-    <p>WhatsApp: +258 862349997</p>
-    <p>Email: <a href="mailto:uaheraajv02@gmail.com">uaheraajv023@gmail.com</a></p>
-    <p>Facebook: <a href="https://facebook.com/fernandaredes" target="_blank" rel="noopener noreferrer">facebook.com/fernandaredes</a></p>
-    <a
-      class="whatsapp-button"
-      href="https://wa.me/258862349997"
-      target="_blank"
-      rel="noopener noreferrer"
-      >Fale conosco no WhatsApp</a
-    >
+    <ul>
+      <li>Instalação de Wi-Fi, cabeamento, repetidores</li>
+      <li>Redes empresariais, servidores, VLANs</li>
+      <li>Diagnóstico, manutenção, otimização</li>
+      <li>Suporte contínuo para empresas</li>
+    </ul>
   </section>
 
   <section>
     <h2>Formulário de Contato</h2>
     <form id="contact-form">
       <label for="from_name">Nome:</label>
-      <input
-        type="text"
-        id="from_name"
-        name="from_name"
-        placeholder="Seu nome"
-        required
-      />
+      <input type="text" id="from_name" name="from_name" required />
+
       <label for="from_email">Email:</label>
-      <input
-        type="email"
-        id="from_email"
-        name="from_email"
-        placeholder="Seu email"
-        required
-      />
+      <input type="email" id="from_email" name="from_email" required />
+
       <label for="message">Mensagem:</label>
-      <textarea
-        id="message"
-        name="message"
-        placeholder="Sua mensagem"
-        rows="5"
-        required
-      ></textarea>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <div class="g-recaptcha" data-sitekey="SUA_CHAVE_DO_SITE"></div>
+
       <button type="submit">Enviar</button>
-      <p id="form-status" style="margin-top: 10px; font-weight: bold;"></p>
+      <p id="form-status"></p>
     </form>
   </section>
 
@@ -174,30 +87,32 @@
       emailjs.init("gaE4R7tIAanQitSmG");
     })();
 
-    document
-      .getElementById("contact-form")
-      .addEventListener("submit", function (e) {
-        e.preventDefault();
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
 
-        const status = document.getElementById("form-status");
-        status.style.color = "white";
-        status.textContent = "Enviando...";
+      const status = document.getElementById("form-status");
+      status.style.color = "white";
 
-        emailjs
-          .sendForm("service_5gclrea", "412Gmail_API", this)
-          .then(
-            function () {
-              status.style.color = "#00ff99";
-              status.textContent = "Mensagem enviada com sucesso!";
-              document.getElementById("contact-form").reset();
-            },
-            function (error) {
-              status.style.color = "#ff5050";
-              status.textContent = "Erro ao enviar. Tente novamente.";
-              console.error("Erro:", error);
-            }
-          );
-      });
+      if (!grecaptcha.getResponse()) {
+        status.style.color = "#ff5050";
+        status.textContent = "Por favor, confirme o reCAPTCHA.";
+        return;
+      }
+
+      status.textContent = "Enviando...";
+
+      emailjs.sendForm("service_5gclrea", "412Gmail_API", this)
+        .then(() => {
+          status.style.color = "#00ff99";
+          status.textContent = "Mensagem enviada com sucesso!";
+          document.getElementById("contact-form").reset();
+          grecaptcha.reset();
+        }, (err) => {
+          status.style.color = "#ff5050";
+          status.textContent = "Erro ao enviar. Tente novamente.";
+          console.error("Erro:", err);
+        });
+    });
   </script>
 </body>
 </html>

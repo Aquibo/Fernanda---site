@@ -247,3 +247,11 @@
     </form>
 </body>
 </html>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+emailjs.init({
+  publicKey: 'YOUR_PUBLIC_KEY',
+});
+emailjs.sendForm('contact_service', 'contact_form', this);

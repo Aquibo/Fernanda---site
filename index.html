@@ -168,11 +168,10 @@
     <p>&copy; <script>document.write(new Date().getFullYear());</script> Fernanda Redes & Tecnologia</p>
   </footer>
 
-  <!-- EmailJS SDK -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
     (function () {
-      emailjs.init("gaE4R7tIAanQitSmG"); // substitua pela sua chave pública EmailJS
+      emailjs.init("gaE4R7tIAanQitSmG");
     })();
 
     document
@@ -185,7 +184,7 @@
         status.textContent = "Enviando...";
 
         emailjs
-          .sendForm("service_swyqbhf", "412Gmail_API", this)
+          .sendForm("service_5gclrea", "412Gmail_API", this)
           .then(
             function () {
               status.style.color = "#00ff99";

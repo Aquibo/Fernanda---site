@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Site da Fernanda - portfólio, informações e contato.">
-  <meta name="keywords" content="Fernanda, portfólio, site pessoal, contato, redes, tecnologia">
-  <meta name="author" content="Fernanda">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Site da Fernanda - portfólio, informações e contato." />
+  <meta name="keywords" content="Fernanda, portfólio, site pessoal, contato, redes, tecnologia" />
+  <meta name="author" content="Fernanda" />
   <title>Fernanda Redes & Tecnologia</title>
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -41,7 +43,9 @@
       text-align: center;
       color: white;
     }
-    .service { margin-bottom: 10px; }
+    .service {
+      margin-bottom: 10px;
+    }
     .whatsapp-button {
       display: inline-block;
       background-color: #25D366;
@@ -61,7 +65,8 @@
       margin-bottom: 5px;
       font-weight: bold;
     }
-    input, textarea {
+    input,
+    textarea {
       margin-bottom: 10px;
       padding: 12px;
       border: none;
@@ -77,20 +82,30 @@
       font-weight: bold;
       font-size: 1em;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
     button:hover {
       background-color: #0077b3;
     }
     @media (max-width: 600px) {
-      header img { height: 40px; }
-      section { padding: 15px; margin: 5px; }
-      input, textarea, button { font-size: 1em; }
+      header img {
+        height: 40px;
+      }
+      section {
+        padding: 15px;
+        margin: 5px;
+      }
+      input,
+      textarea,
+      button {
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.jpg" alt="Logotipo da Fernanda Redes e Tecnologia">
+    <img src="logo.jpg" alt="Logotipo da Fernanda Redes e Tecnologia" />
     <h1>Fernanda Redes & Tecnologia</h1>
     <p>Soluções em rede com o cuidado Fernanda</p>
   </header>
@@ -107,20 +122,45 @@
     <h2>Contato</h2>
     <p>WhatsApp: +258 862349997</p>
     <p>Email: <a href="mailto:uaheraajv02@gmail.com">uaheraajv023@gmail.com</a></p>
-    <p>Facebook: <a href="https://facebook.com/fernandaredes" target="_blank">facebook.com/fernandaredes</a></p>
-    <a class="whatsapp-button" href="https://wa.me/258862349997" target="_blank">Fale conosco no WhatsApp</a>
+    <p>Facebook: <a href="https://facebook.com/fernandaredes" target="_blank" rel="noopener noreferrer">facebook.com/fernandaredes</a></p>
+    <a
+      class="whatsapp-button"
+      href="https://wa.me/258862349997"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Fale conosco no WhatsApp</a
+    >
   </section>
 
   <section>
     <h2>Formulário de Contato</h2>
     <form id="contact-form">
       <label for="from_name">Nome:</label>
-      <input type="text" id="from_name" name="from_name" placeholder="Seu nome" required>
+      <input
+        type="text"
+        id="from_name"
+        name="from_name"
+        placeholder="Seu nome"
+        required
+      />
       <label for="from_email">Email:</label>
-      <input type="email" id="from_email" name="from_email" placeholder="Seu email" required>
+      <input
+        type="email"
+        id="from_email"
+        name="from_email"
+        placeholder="Seu email"
+        required
+      />
       <label for="message">Mensagem:</label>
-      <textarea id="message" name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Sua mensagem"
+        rows="5"
+        required
+      ></textarea>
       <button type="submit">Enviar</button>
+      <p id="form-status" style="margin-top: 10px; font-weight: bold;"></p>
     </form>
   </section>
 
@@ -128,49 +168,37 @@
     <p>&copy; <script>document.write(new Date().getFullYear());</script> Fernanda Redes & Tecnologia</p>
   </footer>
 
-  <!-- EmailJS SDK + Script -->
+  <!-- EmailJS SDK -->
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
-    (function() {
-      emailjs.init("gaE4R7tlAanQitSmG"); // chave pública correta
+    (function () {
+      emailjs.init("gaE4R7tlAanQitSmG"); // substitua pela sua chave pública EmailJS
     })();
 
-    <section>
-  <h2>Formulário de Contato</h2>
-  <form id="contact-form">
-    <label for="from_name">Nome:</label>
-    <input type="text" id="from_name" name="from_name" placeholder="Seu nome" required>
-    <label for="from_email">Email:</label>
-    <input type="email" id="from_email" name="from_email" placeholder="Seu email" required>
-    <label for="message">Mensagem:</label>
-    <textarea id="message" name="message" placeholder="Sua mensagem" rows="5" required></textarea>
-    <button type="submit">Enviar</button>
-    <p id="form-status" style="margin-top:10px; font-weight:bold;"></p>
-  </form>
-</section>
+    document
+      .getElementById("contact-form")
+      .addEventListener("submit", function (e) {
+        e.preventDefault();
 
-<!-- EmailJS SDK + Script -->
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function() {
-    emailjs.init("gaE4R7tlAanQitSmG"); // chave pública
-  })();
+        const status = document.getElementById("form-status");
+        status.style.color = "white";
+        status.textContent = "Enviando...";
 
-  document.getElementById("contact-form").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const status = document.getElementById("form-status");
-    status.style.color = "white";
-    status.textContent = "Enviando...";
-
-    emailjs.sendForm("service_swyqbhf", "412Gmail_API", this)
-      .then(function() {
-        status.style.color = "#00ff99";
-        status.textContent = "Mensagem enviada com sucesso!";
-        document.getElementById("contact-form").reset();
-      }, function(error) {
-        status.style.color = "#ff5050";
-        status.textContent = "Erro ao enviar. Tente novamente.";
-        console.error("Erro:", error);
+        emailjs
+          .sendForm("service_swyqbhf", "412Gmail_API", this)
+          .then(
+            function () {
+              status.style.color = "#00ff99";
+              status.textContent = "Mensagem enviada com sucesso!";
+              document.getElementById("contact-form").reset();
+            },
+            function (error) {
+              status.style.color = "#ff5050";
+              status.textContent = "Erro ao enviar. Tente novamente.";
+              console.error("Erro:", error);
+            }
+          );
       });
-  });
-</script>
+  </script>
+</body>
+</html>

@@ -135,16 +135,42 @@
       emailjs.init("gaE4R7tlAanQitSmG"); // chave pública correta
     })();
 
-    document.getElementById("contact-form").addEventListener("submit", function(e) {
-      e.preventDefault();
-      emailjs.sendForm("service_swyqbhf", "412Gmail_API", this)
-        .then(function() {
-          alert("Mensagem enviada com sucesso!");
-          document.getElementById("contact-form").reset();
-        }, function(error) {
-          alert("Erro ao enviar: " + JSON.stringify(error));
-        });
-    });
-  </script>
-</body>
-  </html>
+    <section>
+  <h2>Formulário de Contato</h2>
+  <form id="contact-form">
+    <label for="from_name">Nome:</label>
+    <input type="text" id="from_name" name="from_name" placeholder="Seu nome" required>
+    <label for="from_email">Email:</label>
+    <input type="email" id="from_email" name="from_email" placeholder="Seu email" required>
+    <label for="message">Mensagem:</label>
+    <textarea id="message" name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+    <button type="submit">Enviar</button>
+    <p id="form-status" style="margin-top:10px; font-weight:bold;"></p>
+  </form>
+</section>
+
+<!-- EmailJS SDK + Script -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("gaE4R7tlAanQitSmG"); // chave pública
+  })();
+
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const status = document.getElementById("form-status");
+    status.style.color = "white";
+    status.textContent = "Enviando...";
+
+    emailjs.sendForm("service_swyqbhf", "412Gmail_API", this)
+      .then(function() {
+        status.style.color = "#00ff99";
+        status.textContent = "Mensagem enviada com sucesso!";
+        document.getElementById("contact-form").reset();
+      }, function(error) {
+        status.style.color = "#ff5050";
+        status.textContent = "Erro ao enviar. Tente novamente.";
+        console.error("Erro:", error);
+      });
+  });
+</script>

@@ -1,0 +1,3 @@
+Este é um ficheiro de teste.
+Criado para verificar se o sistema está a funcionar corretamente.
+Data: 25/05/2025
